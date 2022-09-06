@@ -1,0 +1,17 @@
+{
+    "name": "@devoinc/prettier-config",
+    "version": "1.0.0",
+    "description": "Simple Prettier config for Devo.",
+    "main": "index.json",
+    "author": "Devo dev team",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/DevoInc/prettier-config.git"
+    },
+    "keywords": [
+      "prettier",
+      "Devo"
+    ]
+  }
+  

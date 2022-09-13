@@ -19,6 +19,9 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           scope: "@devoinc"
       - run: npm ci
+      - run: cat .npmrc
+      - run: echo "config"
+      - run: npm get config
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

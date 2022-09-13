@@ -23,6 +23,8 @@ jobs:
       - run: npm get config
       - run: echo "config2"
       - run: npm config list
+      - run: echo "config3"
+      - run: cat /home/runner/work/_temp/.npmrc
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

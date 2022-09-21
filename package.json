@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:devoinc/prettier-config.git"
+    "url": "git@github.com:DevoInc/prettier-config.git"
   },
   "publishConfig": {
     "access": "public"

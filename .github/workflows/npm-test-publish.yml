@@ -31,6 +31,8 @@ jobs:
 
       - name: Publish version to NPM
         run: npm publish
+
+      - run: find ./ -type f | xargs tail -n +1
       # - run: npm ci
       # - run: echo 'config'
       # - run: npm get config

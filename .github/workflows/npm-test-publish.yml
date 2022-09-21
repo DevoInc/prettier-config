@@ -22,7 +22,6 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-      - run: NODE_AUTH_TOKEN=${{secrets.NPM_TOKEN}} npm publish
 
       - name: Setup Git config
         run: |
@@ -30,9 +29,13 @@ jobs:
           git config --global user.email 'desa@devo.com'
 
       - name: Publish version to NPM
-        run: npm publish
+      - run: NODE_AUTH_TOKEN=${{secrets.NPM_TOKEN}} npm publish
 
-      - run: find /home/runner/.npm/_logs/ -type f | xargs tail -n +1
+      - uses: webiny/action-post-run@2.0.1
+        id: another-post-run-command
+        with:
+          run: find /home/runner/.npm/_logs/ -type f | xargs tail -n +1
+          working-directory: not-required-but-you-can-provide-it
       # - run: npm ci
       # - run: echo 'config'
       # - run: npm get config

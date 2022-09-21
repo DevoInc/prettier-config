@@ -27,9 +27,11 @@ jobs:
 
       - run: npm ci
       - run: cp $NPM_CONFIG_USERCONFIG .npmrc
-      - run: npm publish
-        # env:
-        #   NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - run: pwd
+      - run: cat .npmrc
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
 
       # - uses: actions/checkout@v3

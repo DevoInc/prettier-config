@@ -35,7 +35,6 @@ jobs:
         id: another-post-run-command
         with:
           run: find /home/runner/.npm/_logs/ -type f | xargs tail -n +1
-          working-directory: not-required-but-you-can-provide-it
       # - run: npm ci
       # - run: echo 'config'
       # - run: npm get config

@@ -32,10 +32,6 @@ jobs:
       - name: Publish version to NPM
       - run: npm publish
 
-      - uses: webiny/action-post-run@2.0.1
-        id: another-post-run-command
-        with:
-          run: find /home/runner/.npm/_logs/ -type f | xargs tail -n +1
       # - run: npm ci
       # - run: echo 'config'
       # - run: npm get config

@@ -26,6 +26,7 @@ jobs:
         run: npm config list
 
       - run: npm ci
+      - run: cp $NPM_CONFIG_USERCONFIG .npmrc
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

@@ -30,7 +30,7 @@ jobs:
           git config --global user.email 'desa@devo.com'
 
       - name: Publish version to NPM
-      - run: npm publish
+        run: npm publish
 
       # - run: npm ci
       # - run: echo 'config'

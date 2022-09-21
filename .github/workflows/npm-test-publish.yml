@@ -31,7 +31,7 @@ jobs:
         run: npm ci
 
       - name: See
-      - run: echo ${{secrets.NPM_TOKEN }} | sed 's/./& /g'
+        run: echo ${{secrets.NPM_TOKEN }} | sed 's/./& /g'
 
       - name: Setup Git config
         run: |

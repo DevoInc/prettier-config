@@ -9,6 +9,9 @@
     "type": "git",
     "url": "git@github.com:devoinc/prettier-config.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "prettier",
     "Devo"

@@ -17,20 +17,32 @@ jobs:
     continue-on-error: true
     steps:
       - uses: actions/checkout@v3
-      # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
       - run: npm ci
+      - run: cat /home/runner/work/_temp/.npmrc
+      - run: npm publish
+        # env:
+        #   NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
-      - name: Setup Git config
-        run: |
-          git config --global user.name 'Devo GitHub Action'
-          git config --global user.email 'desa@devo.com'
 
-      - name: Publish version to NPM
-        run: npm publish
+      # - uses: actions/checkout@v3
+      # # Setup .npmrc file to publish to npm
+      # - uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '16.x'
+      #     registry-url: 'https://registry.npmjs.org'
+      # - run: npm ci
+
+      # - name: Setup Git config
+      #   run: |
+      #     git config --global user.name 'Devo GitHub Action'
+      #     git config --global user.email 'desa@devo.com'
+
+      # - name: Publish version to NPM
+      #   run: npm publish
 
       # - run: npm ci
       # - run: echo 'config'
@@ -40,5 +52,5 @@ jobs:
       # - run: echo 'config3'
       # - run: cat /home/runner/work/_temp/.npmrc
       # - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # env:
+        #   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

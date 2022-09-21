@@ -14,7 +14,6 @@ env:
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -23,6 +22,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: cat /home/runner/work/_temp/.npmrc
+      - run: cat /home/runner/.npm/_logs */*
       - run: npm publish
         # env:
         #   NODE_AUTH_TOKEN: ${{secrets.npm_token}}
@@ -54,3 +54,9 @@ jobs:
       # - run: npm publish --access public
         # env:
         #   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  npm-logs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: cat /home/runner/work/_temp/.npmrc
+      - run: cat /home/runner/.npm/_logs */*

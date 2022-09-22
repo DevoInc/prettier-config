@@ -16,7 +16,7 @@ $ npm install --dev @devoinc/prettier-config
 
 ```json
 {
-  // ...
+  ...other stuff...
   "prettier": "@devoinc/prettier-config"
 }
 ```

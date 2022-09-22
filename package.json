@@ -5,13 +5,12 @@
   "main": "index.json",
   "author": "Devo dev team",
   "license": "MIT",
+  "files": [
+    "index.js"
+   ],
   "repository": {
     "type": "git",
     "url": "git@github.com:DevoInc/prettier-config.git"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   },
   "keywords": [
     "prettier",

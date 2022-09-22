@@ -1,6 +1,6 @@
 # `@devoinc/prettier-config`
 
-A simple [Prettier](https://prettier.io/) configuration for Devo. 
+A simple [Prettier](https://prettier.io/) configuration for Devo.
 
 ## Usage
 
@@ -16,8 +16,7 @@ $ npm install --dev @devoinc/prettier-config
 
 ```json
 {
-  // ...
+  ...other stuff...
   "prettier": "@devoinc/prettier-config"
 }
 ```
-
